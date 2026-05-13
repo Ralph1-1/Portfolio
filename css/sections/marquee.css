@@ -1,0 +1,103 @@
+/* ==================
+   MARQUEE SCROLLER
+=================== */
+
+.marquee__section {
+  margin-top: 28px;
+  padding-bottom: 40px;
+}
+
+.marquee__track-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.marquee__track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.marquee__track-wrapper:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+/* ---- Card ---- */
+.marquee__card {
+  position: relative;
+  height: 96px;
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marquee__card:hover {
+  border-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient fills the card on hover — sits behind the icon */
+.marquee__card-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.marquee__card:hover .marquee__card-gradient {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Icon sits above the gradient */
+.marquee__card-img {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: filter 0.35s ease, transform 0.35s ease;
+  /*
+    drop-shadow follows the alpha channel, creating a dark glow outline around
+    the icon shape — this makes white-fill SVGs (e.g. github.svg) visible on
+    the white card background in the default (non-hover) state.
+  */
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.25));
+}
+
+.marquee__card:hover .marquee__card-img {
+  /*
+    We do NOT invert icons to white. Several icons (C.svg, SQL.svg, Tableau.svg,
+    R language.svg) have opaque background fills — brightness(0)+invert(1) would
+    turn the entire canvas into a featureless white blob, hiding the icon shape.
+    Instead we scale the icon up and let it sit naturally on the gradient, with
+    a slight brightness boost so it pops against the colourful background.
+  */
+  transform: scale(1.15);
+  filter: brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}

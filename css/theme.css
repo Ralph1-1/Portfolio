@@ -137,6 +137,10 @@ table {
   /*=============== 
         COLORS 
     =================*/
+  /* Fonts */
+  --font-sans: 'Inter', 'Chakra Petch', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
   /* Primary colors */
   --p-20: hsl(213, 100%, 98%);
   --p-50: hsl(215, 100%, 97%);

@@ -3,6 +3,108 @@
 =========================*/
 
 /* *=====================
+    Hero — large laptop
+=========================*/
+@media (max-width: 1280px) {
+    .hero__card {
+        height: 520px;
+    }
+    .hero__content {
+        padding: 2.5rem 3rem;
+    }
+    .hero__name {
+        font-size: 2.2rem;
+    }
+}
+
+/* *=====================
+    Hero — tablet
+=========================*/
+@media (max-width: 900px) {
+    .hero__section {
+        padding-top: 24px;
+    }
+    .hero__card {
+        width: calc(100% - 3rem);
+        height: auto;
+        min-height: 520px;
+        border-radius: 32px;
+    }
+    .hero__content {
+        padding: 2rem 2.5rem 6.5rem;
+        gap: 14px;
+    }
+    .hero__name {
+        font-size: 2rem;
+    }
+    .hero__bio {
+        max-width: 100%;
+    }
+    .hero__nav-wrapper {
+        bottom: 20px;
+    }
+}
+
+/* *=====================
+    Hero — phone
+=========================*/
+@media (max-width: 540px) {
+    .hero__section {
+        padding-top: 16px;
+    }
+    .hero__card {
+        width: calc(100% - 2rem);
+        border-radius: 24px;
+        min-height: 580px;
+    }
+    .hero__content {
+        padding: 1.5rem 1.5rem 8rem;
+        gap: 12px;
+    }
+    .hero__name {
+        font-size: 1.75rem;
+    }
+    .hero__avatar {
+        width: 56px;
+        height: 56px;
+    }
+    .hero__avatar-row {
+        gap: 14px;
+    }
+    .hero__cta-btn,
+    .hero__cta-outline {
+        padding: 10px 22px;
+        font-size: 0.82rem;
+    }
+    .hero__nav-wrapper {
+        width: calc(100% - 3rem);
+        bottom: 16px;
+    }
+    .hero__nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+    .hero__nav-link {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    .hero__nav-cta {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+    /* Marquee cards on phone */
+    .marquee__card {
+        height: 80px;
+        width: 130px;
+    }
+    .marquee__card-img {
+        height: 36px;
+        width: 36px;
+    }
+}
+
+/* *=====================
     Desktop
 =========================*/
 @media (max-width: 1536px) {
