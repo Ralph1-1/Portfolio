@@ -41,7 +41,7 @@
 
     &:nth-child(1) {
         border: none;
-        background: url("../../assets/Picture\ 1.jpg") center / cover no-repeat;
+        background: url("../../assets/Picture%201.jpg") center / cover no-repeat;
     }
 
     &:nth-child(2) {
